@@ -96,7 +96,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                     if (currentAnswer == '')
                         currentAnswer == 'Starting from ' + currentHours + " h the following talks are goinf:\n\n";
                     else 
-                        currentAnswer += ""; 
+                        currentAnswer += "\n\n"; 
                         
                     currentAnswer += '\u2B05' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
                 }
