@@ -108,7 +108,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (itemsFound == 0)
         {
             if (targetTime<0 || targetTime>24)
-                formattedAnswer = "لطفاً کد قطعه را وارد نمایید" + ".\n\n";
+                formattedAnswer = "لطفاً کد قطعه را صحیح وارد نمایید" + ".\n\n";
             else 
                 formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
                 
