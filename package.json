@@ -1,6 +1,6 @@
 {
   "name": "google-sheet-bot"
-,  "version": "1.0.0"
+,  "version": "1.2.0"
 , "description" : "A packaged foo fooer for fooing foos"
 ,  "main": "index.js"
 ,  "scripts": {
