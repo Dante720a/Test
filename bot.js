@@ -84,7 +84,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                 {
                     // add the line break if not the first answer
                     if (itemsFound==0) 
-                        formattedAnswer += "قبض آب قطعه " + targetTime + " مالک " + item.content.$t + ":\n\n";
+                        formattedAnswer += "قبض آب قطعه " + targetTime + ": " + ":\n\n";
                     else 
                         formattedAnswer += "\n\n";
                         
@@ -108,9 +108,9 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (itemsFound == 0)
         {
             if (targetTime<0 || targetTime>24)
-                formattedAnswer = "Enter the time to show talks or write 'Hi'.\n\n";
+                formattedAnswer = "لطفاً کد قطعه را وارد نمایید" + ".\n\n";
             else 
-                formattedAnswer = "Can't find events for the given time ( " + targetTime+ " ч)";
+                formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
                 
             // output current answer
             if (currentAnswer != '')
