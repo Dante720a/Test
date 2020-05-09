@@ -86,19 +86,19 @@ bot.onText(/(.+)$/, function (msg, match) {
                     if (itemsFound==0) 
                         formattedAnswer += "قبض آب قطعه " + targetTime + ": " + ":\n\n";
                     else 
-                        formattedAnswer += "\n\n";
+                        formattedAnswer += "";
                         
                     itemsFound++;
-                    formattedAnswer += '\u27a1' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
+                    formattedAnswer += '\u2B05' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
                 }
                 else if (currentHours == itemTime) // else collect items for the current hour
                 {
                     if (currentAnswer == '')
                         currentAnswer == 'Starting from ' + currentHours + " h the following talks are goinf:\n\n";
                     else 
-                        currentAnswer += "\n\n"; 
+                        currentAnswer += ""; 
                         
-                    currentAnswer += '\u27a1' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
+                    currentAnswer += '\u2B05' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
                 }
                 
                 // else doing nothing
