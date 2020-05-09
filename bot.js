@@ -86,7 +86,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                     if (itemsFound==0) 
                         formattedAnswer += "قبض آب قطعه " + targetTime + ": " + ":\n\n";
                     else 
-                        formattedAnswer += "";
+                        formattedAnswer += "\n\n";
                         
                     itemsFound++;
                     formattedAnswer += '\u2B05' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
