@@ -172,10 +172,10 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        formattedAnswer = "";
+        //formattedAnswer = "";
         
         // debug purposes: echo from id: 
-        //formattedAnswer += "\n";
+        formattedAnswer += "\n";
     
         currentHours = parseInt(moment().tz(config.confTimeZone).format('HH'),10);
         currentMinutes = parseInt(moment().tz(config.confTimeZone).format('mm'),10);
