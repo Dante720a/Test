@@ -138,10 +138,10 @@ bot.onText(/(.+)$/, function (msg, match) {
  
         // send message telegram finally
 	    
-	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
-	
-            // reply sent!
-        });
+	//bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+	//});
+
+       
     
     });
 
@@ -249,9 +249,8 @@ bot.onText(/(.+)$/, function (msg, match) {
 
         // send message telegram finally
 	formattedAnswer += "\n" + ":";
-	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
-            // reply sent!
-        });
+	//bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+        //});
     
     });
 
