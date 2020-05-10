@@ -5,7 +5,8 @@ This Telegram bot get data from Google worksheet, checks the very first column f
 
 ## steps to use
 
-### 1.Register a telegram bot (send **/newbot** commmand to register bot with [https://telegram.me/BotFather](@BotFather) in Telegram) and copy token for newly created bot.
+### 1.Register a telegram bot 
+- (send **/newbot** commmand to register bot with [https://telegram.me/BotFather](@BotFather) in Telegram) and copy token for newly created bot.
 
 ### 2. Create Google Sheet with the data. The very first column is treated as a key to search for data. You may have multiple rows with the same key, all of them they will be displayed then.
 | Code  | Where           | Description | Author |
@@ -34,8 +35,6 @@ This Telegram bot get data from Google worksheet, checks the very first column f
 
 
 #### 7.Create a github account and make a new repository and upload downloaded project with edited Config.js file
-
-
 
 #### 8. Go to heroku select your app goto "deploy" tab change "Deployment method" to "github"
 #### Connected to your github account and search for your given repository name
