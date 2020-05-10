@@ -135,9 +135,6 @@ bot.onText(/(.+)$/, function (msg, match) {
         }
 
  
-        // send message telegram finally
-        bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
-            // reply sent!
         });
     
     });
@@ -172,7 +169,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        formattedAnswer = "";
+        
         
         // debug purposes: echo from id: 
         // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
@@ -245,9 +242,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         }
  
 
-        // send message telegram finally
-        bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
-            // reply sent!
+
         });
     
     });
