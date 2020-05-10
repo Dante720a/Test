@@ -62,7 +62,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        var formattedAnswer = "";
+        var formattedAnswer += "";
         
         // debug purposes: echo from id: 
         // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
