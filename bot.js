@@ -23,6 +23,7 @@ console.log('secon-bot server started...');
 // "od6" is the fist worksheet in the spreadsheet
 var WrkSheet01 = "https://spreadsheets.google.com/feeds/list/" + config.googleSheetKey + "/1/public/values?alt=json";
 var WrkSheet02 = "https://spreadsheets.google.com/feeds/list/" + config.googleSheetKey + "/2/public/values?alt=json";
+var WrkSheet03 = "https://spreadsheets.google.com/feeds/list/" + config.googleSheetKey + "/3/public/values?alt=json";
 
 var moment = require('moment-timezone');
 
@@ -32,7 +33,7 @@ bot.onText(/(.+)$/, function (msg, match) {
   var request = require("request");
       
     // send request to retrieve the spreadsheet as the JSON 
-    request(WrkSheet01, function (error, response, body) {
+    request(WrkSheet02, function (error, response, body) {
         if (error || response.statusCode != 200) {
             console.log('Error: '+error); // Show the error
             console.log('Status code: ' + response.statusCode); // Show the error
