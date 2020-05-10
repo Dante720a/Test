@@ -21,7 +21,8 @@ console.log('secon-bot server started...');
 
 // Make sure it is public or set to Anyone with link can view 
 // "od6" is the fist worksheet in the spreadsheet
-var url = "https://spreadsheets.google.com/feeds/list/" + config.googleSheetKey + "/od6/public/values?alt=json";
+var WrkSheet01 = "https://spreadsheets.google.com/feeds/list/" + config.googleSheetKey + "/od6/public/values?alt=json";
+var WrkSheet02 = "https://spreadsheets.google.com/feeds/list/" + config.googleSheetKey + "/ope57yg/public/values?alt=json";
 
 var moment = require('moment-timezone');
 
@@ -31,7 +32,7 @@ bot.onText(/(.+)$/, function (msg, match) {
   var request = require("request");
       
     // send request to retrieve the spreadsheet as the JSON 
-    request(url, function (error, response, body) {
+    request(WrkSheet01, function (error, response, body) {
         if (error || response.statusCode != 200) {
             console.log('Error: '+error); // Show the error
             console.log('Status code: ' + response.statusCode); // Show the error
@@ -108,7 +109,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (itemsFound == 0)
         {
             if (targetTime<0 || targetTime>24)
-                formattedAnswer = "لطفاً کد قطعه را صحیح وارد نمایید" + ".\n\n";
+                formattedAnswer = "اطلاعاتی برای کد وارد شده پیدا نشد" + ".\n\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n\n";
             else 
                 formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
                 
