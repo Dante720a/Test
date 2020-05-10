@@ -139,8 +139,9 @@ bot.onText(/(.+)$/, function (msg, match) {
 
  
         // send message telegram finally
-	   
-	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+	
+	var MMSG1 = formattedAnswer;   
+	bot.sendMessage(msg.chat.id, MMSG1).then(function () {
 	});
 
 
@@ -255,9 +256,9 @@ bot.onText(/(.+)$/, function (msg, match) {
 
         // send message telegram finally
 	formattedAnswer += "\n" + ".";
-	
+	var MMSG2 = formattedAnswer; 
 	setTimeout(() => { 
-		bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+		bot.sendMessage(msg.chat.id, MMSG2).then(function () {
         	});
 	}, 5000);
 
@@ -371,9 +372,9 @@ bot.onText(/(.+)$/, function (msg, match) {
  
 
         // send message telegram finally
-        
+        var MMSG3 = formattedAnswer; 
 	setTimeout(() => { 
-		bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+		bot.sendMessage(msg.chat.id, MMSG3).then(function () {
         	});
 	}, 8000);
  
