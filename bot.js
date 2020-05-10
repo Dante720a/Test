@@ -134,8 +134,7 @@ bot.onText(/(.+)$/, function (msg, match) {
             }
         }
 
- 
-        });
+
     
     });
 
@@ -169,7 +168,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        
+
         
         // debug purposes: echo from id: 
         // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
@@ -242,8 +241,6 @@ bot.onText(/(.+)$/, function (msg, match) {
         }
  
 
-
-        });
     
     });
 
@@ -276,7 +273,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        formattedAnswer = "";
+
         
         // debug purposes: echo from id: 
         // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
