@@ -257,7 +257,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
         });
-    	var MyMessage2 = formattedAnswer; 
+    	MyMessage1 += formattedAnswer; 
 
 	    
     });
@@ -367,14 +367,17 @@ bot.onText(/(.+)$/, function (msg, match) {
 
         // send message telegram finally
         
-	
+	MyMessage1 += formattedAnswer;
 	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
         });
-	var MyMessage3 = formattedAnswer; 
+	bot.sendMessage(msg.chat.id, MyMessage1).then(function () {
+        });	 
  
     });
 
 //End of Get Sheet3
 
+
+	
 });
 module.exports = bot;
