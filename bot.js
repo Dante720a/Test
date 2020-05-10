@@ -34,16 +34,19 @@ bot.onText(/(.+)$/, function (msg, match) {
       
     // send request to retrieve the spreadsheet as the JSON 
     request(WrkSheet01, function (error, response, body) {
-        if (error || response.statusCode != 200) {
+        
+		
+		
+		if (error || response.statusCode != 200) {
             console.log('Error: '+error); // Show the error
             console.log('Status code: ' + response.statusCode); // Show the error
             return;
         }
         
         var parsed = JSON.parse(body);
-        var targetTime = NaN;
-        if (!isNaN(keywords))   // isNaN returns false if the value is number
-        {
+        var targetTime = NaN;   
+	   if (!isNaN(keywords))   // isNaN returns false if the value is number
+       	   {
             try{
                 targetTime = parseInt(keywords, 10);
             }
@@ -131,87 +134,6 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 //Start of Get Ghabz Ab
 
-    request(WrkSheet02, function (error, response, body) {
-        if (error || response.statusCode != 200) {
-            console.log('Error: '+error); // Show the error
-            console.log('Status code: ' + response.statusCode); // Show the error
-            return;
-        }
-        
-        var parsed = JSON.parse(body);
-        var targetTime = NaN;
-        if (!isNaN(keywords))   // isNaN returns false if the value is number
-        {
-            try{
-                targetTime = parseInt(keywords, 10);
-            }
-            catch(e){
-                targetTime = NaN;
-            }
-        }
-        
-        if (isNaN(targetTime))
-            targetTime = -1;
-        
-        var formattedAnswer = "";
-        
-        // debug purposes: echo from id: 
-        // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
-    
-        var currentHours = parseInt(moment().tz(config.confTimeZone).format('HH'),10);
-        var currentMinutes = parseInt(moment().tz(config.confTimeZone).format('mm'),10);
-        // console.log("Current hours: " + currentHours);
-        var currentAnswer = "";
-        
-        var itemsFound = 0;
-        // sending answers
-        parsed.feed.entry.forEach(function(item){
-                // get the time(in hours) from the very first column
-                var itemTime = NaN;
-                var itemTitle = item.title.$t
-                try{
-                    itemTime = parseInt(itemTitle, 10);
-                }
-                catch(e)
-                {
-                    itemTime = NaN;
-                }
-                
-                if (
-                    (!isNaN(itemTime) && itemTime == targetTime) ||
-                    (isNaN(itemTime) && itemTitle.toLowerCase().trim() == keywords.toLowerCase().trim())
-                    )
-                {
-                    // add the line break if not the first answer
-                    if (itemsFound==0) 
-                        formattedAnswer += "گزارش قطعه " + targetTime + ": " + "\n";
-                    else 
-                        formattedAnswer += "\n";
-                        
-                    itemsFound++;
-                    formattedAnswer += '\u2B05' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
-                }
-                else if (currentHours == itemTime) // else collect items for the current hour
-                {
-                    if (currentAnswer == '')
-                        currentAnswer == 'Starting from ' + currentHours + " h the following talks are goinf:\n";
-                    else 
-                        currentAnswer += "\n"; 
-                        
-                    currentAnswer += '\u2B05' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
-                }
-                
-                // else doing nothing
-        });
-        
-       
-
-
-
-	   
-		// if no items were found for the given time 
-        if (itemsFound == 0)
-        {
 
 // End of Get Ghabz Ab
  
@@ -222,7 +144,6 @@ bot.onText(/(.+)$/, function (msg, match) {
     
     });
 
-});
 
 });
 module.exports = bot;
