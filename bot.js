@@ -123,9 +123,11 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (itemsFound == 0)
         {
             if (targetTime<0 || targetTime>24)
-                //formattedAnswer = "اطلاعاتی برای کد قطعه وارد شده پیدا نشد" + ".\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n";
+               // formattedAnswer = "اطلاعاتی برای کد قطعه وارد شده پیدا نشد" + ".\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n";
+		    formattedAnswer = "";
             else 
-                //formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
+                // formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
+		    formattedAnswer = "";
                 
             // output current answer
             if (currentAnswer != '')
@@ -236,9 +238,10 @@ bot.onText(/(.+)$/, function (msg, match) {
         {
             if (targetTime<0 || targetTime>24)
                 //formattedAnswer = "اطلاعاتی برای کد قطعه وارد شده پیدا نشد" + ".\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n";
-            else 
+           formattedAnswer = "";
+		    else 
                 //formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
-                
+                formattedAnswer = "";
             // output current answer
             if (currentAnswer != '')
             {
@@ -346,9 +349,10 @@ bot.onText(/(.+)$/, function (msg, match) {
         {
             if (targetTime<0 || targetTime>24)
                 //formattedAnswer = "اطلاعاتی برای کد وارد شده پیدا نشد" + ".\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n";
-            else 
+            formattedAnswer = "";
+		    else 
                 //formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
-                
+                formattedAnswer = "";
             // output current answer
             if (currentAnswer != '')
             {
