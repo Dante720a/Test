@@ -150,6 +150,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 //End of Get Sheet1
 
+setTimeout(() => {  console.log("World!"); }, 2000);
 
 //Start of Get Sheet2
 
@@ -263,7 +264,9 @@ bot.onText(/(.+)$/, function (msg, match) {
     });
 
 //End of Get Sheet2
-
+	
+setTimeout(() => {  console.log("World!"); }, 2000);
+	
 //Start of Get Sheet3
 
     request(WrkSheet03, function (error, response, body) {
