@@ -93,7 +93,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                 {
                     // add the line break if not the first answer
                     if (itemsFound==0) 
-                        formattedAnswer += "گزارش قطعه " + targetTime + ": " + "\n";
+                        formattedAnswer += "گزارش قطعه " + targetTime + ": ";
                     else 
                         formattedAnswer += "\n";
                         
