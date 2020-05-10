@@ -139,10 +139,13 @@ bot.onText(/(.+)$/, function (msg, match) {
 
  
         // send message telegram finally
-	    
+	   
 	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
 	});
-
+	var MyMessage1 = formattedAnswer; 
+	var MyMessage1 = formattedAnswer; 
+	bot.sendMessage(msg.chat.id, MyMessage1).then(function () {
+	});
        
     
     });
