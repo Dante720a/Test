@@ -368,10 +368,13 @@ bot.onText(/(.+)$/, function (msg, match) {
         // send message telegram finally
         
 	
-	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+	bot.sendMessage(msg.chat.id, "").then(function () {
         });
 	var MyMessage3 = formattedAnswer; 
-
+	bot.sendMessage(msg.chat.id, MyMessage1).then(function () {
+        });
+	bot.sendMessage(msg.chat.id, MyMessage2).then(function () {
+        });
 	bot.sendMessage(msg.chat.id, MyMessage3).then(function () {
         }); 
     });
