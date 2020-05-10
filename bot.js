@@ -150,7 +150,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 //End of Get Sheet1
 
-setTimeout(() => {  console.log("World!"); }, 2000);
+
 
 //Start of Get Sheet2
 
@@ -256,8 +256,10 @@ setTimeout(() => {  console.log("World!"); }, 2000);
         // send message telegram finally
 	formattedAnswer += "\n" + ".";
 	
-	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
-        });
+	setTimeout(() => { 
+		bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+        	});
+	}, 2000);
 
 
 	    
@@ -265,7 +267,7 @@ setTimeout(() => {  console.log("World!"); }, 2000);
 
 //End of Get Sheet2
 	
-setTimeout(() => {  console.log("World!"); }, 2000);
+
 	
 //Start of Get Sheet3
 
@@ -370,10 +372,10 @@ setTimeout(() => {  console.log("World!"); }, 2000);
 
         // send message telegram finally
         
-
-	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
-        });
-	 
+	setTimeout(() => { 
+		bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+        	});
+	}, 3000);
  
     });
 
