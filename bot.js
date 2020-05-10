@@ -172,7 +172,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        formattedAnswer += "";
+        formattedAnswer = "";
         
         // debug purposes: echo from id: 
         // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
@@ -281,7 +281,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        formattedAnswer += "";
+        formattedAnswer = "";
         
         // debug purposes: echo from id: 
         // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
