@@ -93,12 +93,12 @@ bot.onText(/(.+)$/, function (msg, match) {
                 {
                     // add the line break if not the first answer
                     if (itemsFound==0) 
-                        formattedAnswer += "گزارش قطعه " + targetTime + " - ";
+                        formattedAnswer += "گزارش قطعه " + targetTime + ": ";
                     else 
                         formattedAnswer += "\n";
                         
                     itemsFound++;
-                    formattedAnswer += item.content.$t; // add item content, '\u27a1' is the arrow emoji
+                    formattedAnswer += '\u2B05' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
                 }
                 else if (currentHours == itemTime) // else collect items for the current hour
                 {
@@ -107,7 +107,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                     else 
                         currentAnswer += "\n"; 
                         
-                    currentAnswer += item.content.$t; // get item content, '\u27a1' is the arrow emoji
+                    currentAnswer += '\u2B05' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
                 }
                 
                 // else doing nothing
@@ -172,10 +172,10 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        //formattedAnswer = "";
+        formattedAnswer = "";
         
         // debug purposes: echo from id: 
-        formattedAnswer += "\n";
+        // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
     
         currentHours = parseInt(moment().tz(config.confTimeZone).format('HH'),10);
         currentMinutes = parseInt(moment().tz(config.confTimeZone).format('mm'),10);
@@ -281,10 +281,10 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        //formattedAnswer = "";
+        formattedAnswer = "";
         
         // debug purposes: echo from id: 
-        formattedAnswer += "\n";
+        // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
     
         currentHours = parseInt(moment().tz(config.confTimeZone).format('HH'),10);
         currentMinutes = parseInt(moment().tz(config.confTimeZone).format('mm'),10);
