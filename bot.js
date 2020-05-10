@@ -371,12 +371,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
         });
 	var MyMessage3 = formattedAnswer; 
-	bot.sendMessage(msg.chat.id, MyMessage1).then(function () {
-        });
-	bot.sendMessage(msg.chat.id, MyMessage2).then(function () {
-        });
-	bot.sendMessage(msg.chat.id, MyMessage3).then(function () {
-        }); 
+ 
     });
 
 //End of Get Sheet3
