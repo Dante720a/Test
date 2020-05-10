@@ -85,9 +85,9 @@ bot.onText(/(.+)$/, function (msg, match) {
                 {
                     // add the line break if not the first answer
                     if (itemsFound==0) 
-                        formattedAnswer += "قبض آب قطعه " + targetTime + ": " + "\n\n";
+                        formattedAnswer += "قبض آب قطعه " + targetTime + ": " + "\n";
                     else 
-                        formattedAnswer += "\n\n";
+                        formattedAnswer += "\n";
                         
                     itemsFound++;
                     formattedAnswer += '\u2B05' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
@@ -95,9 +95,9 @@ bot.onText(/(.+)$/, function (msg, match) {
                 else if (currentHours == itemTime) // else collect items for the current hour
                 {
                     if (currentAnswer == '')
-                        currentAnswer == 'Starting from ' + currentHours + " h the following talks are goinf:\n\n";
+                        currentAnswer == 'Starting from ' + currentHours + " h the following talks are goinf:\n";
                     else 
-                        currentAnswer += "\n\n"; 
+                        currentAnswer += "\n"; 
                         
                     currentAnswer += '\u2B05' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
                 }
@@ -109,7 +109,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (itemsFound == 0)
         {
             if (targetTime<0 || targetTime>24)
-                formattedAnswer = "اطلاعاتی برای کد وارد شده پیدا نشد" + ".\n\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n\n";
+                formattedAnswer = "اطلاعاتی برای کد وارد شده پیدا نشد" + ".\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n";
             else 
                 formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
                 
