@@ -259,7 +259,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	setTimeout(() => { 
 		bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
         	});
-	}, 2000);
+	}, 5000);
 
 
 	    
@@ -375,7 +375,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	setTimeout(() => { 
 		bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
         	});
-	}, 3000);
+	}, 8000);
  
     });
 
