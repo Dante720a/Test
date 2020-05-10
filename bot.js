@@ -147,7 +147,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 //Start of Get Sheet2
 
-    request(WrkSheet01, function (error, response, body) {
+    request(WrkSheet02, function (error, response, body) {
         
 		
 		
@@ -254,6 +254,114 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 //End of Get Sheet2
 
+//Start of Get Sheet3
+
+    request(WrkSheet03, function (error, response, body) {
+        
+		
+		
+		if (error || response.statusCode != 200) {
+            console.log('Error: '+error); // Show the error
+            console.log('Status code: ' + response.statusCode); // Show the error
+            return;
+        }
+        
+        parsed = JSON.parse(body);
+        targetTime = NaN;   
+	   if (!isNaN(keywords))   // isNaN returns false if the value is number
+       	   {
+            try{
+                targetTime = parseInt(keywords, 10);
+            }
+            catch(e){
+                targetTime = NaN;
+            }
+        }
+        
+        if (isNaN(targetTime))
+            targetTime = -1;
+        
+        formattedAnswer = "";
+        
+        // debug purposes: echo from id: 
+        // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
+    
+        currentHours = parseInt(moment().tz(config.confTimeZone).format('HH'),10);
+        currentMinutes = parseInt(moment().tz(config.confTimeZone).format('mm'),10);
+        // console.log("Current hours: " + currentHours);
+        currentAnswer = "";
+        
+        itemsFound = 0;
+        // sending answers
+        parsed.feed.entry.forEach(function(item){
+                // get the time(in hours) from the very first column
+                itemTime = NaN;
+                itemTitle = item.title.$t
+                try{
+                    itemTime = parseInt(itemTitle, 10);
+                }
+                catch(e)
+                {
+                    itemTime = NaN;
+                }
+                
+                if (
+                    (!isNaN(itemTime) && itemTime == targetTime) ||
+                    (isNaN(itemTime) && itemTitle.toLowerCase().trim() == keywords.toLowerCase().trim())
+                    )
+                {
+                    // add the line break if not the first answer
+                    if (itemsFound==0) 
+                        formattedAnswer += "گزارش قطعه " + targetTime + ": " + "\n";
+                    else 
+                        formattedAnswer += "\n";
+                        
+                    itemsFound++;
+                    formattedAnswer += '\u2B05' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
+                }
+                else if (currentHours == itemTime) // else collect items for the current hour
+                {
+                    if (currentAnswer == '')
+                        currentAnswer == 'Starting from ' + currentHours + " h the following talks are goinf:\n";
+                    else 
+                        currentAnswer += "\n"; 
+                        
+                    currentAnswer += '\u2B05' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
+                }
+                
+                // else doing nothing
+        });
+        
+       
+
+
+
+	   
+		// if no items were found for the given time 
+        if (itemsFound == 0)
+        {
+            if (targetTime<0 || targetTime>24)
+                formattedAnswer = "اطلاعاتی برای کد وارد شده پیدا نشد" + ".\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n";
+            else 
+                formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
+                
+            // output current answer
+            if (currentAnswer != '')
+            {
+                formattedAnswer += "Hi! As of " + currentHours + ":" + currentMinutes + " " + config.confTimeZone+ " these talks are going:\n";
+                formattedAnswer += currentAnswer;
+            }
+        }
+ 
+
+        // send message telegram finally
+        bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+            // reply sent!
+        });
+    
+    });
+
+//End of Get Sheet3
 
 });
 module.exports = bot;
