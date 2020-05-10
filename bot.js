@@ -209,7 +209,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                         formattedAnswer += "\n";
                         
                     itemsFound++;
-                    formattedAnswer += '\u1F539' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
+                    formattedAnswer += '\u1f539' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
                 }
                 else if (currentHours == itemTime) // else collect items for the current hour
                 {
@@ -218,7 +218,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                     else 
                         currentAnswer += "\n"; 
                         
-                    currentAnswer += '\u1F539' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
+                    currentAnswer += '\u1f539' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
                 }
                 
                 // else doing nothing
@@ -319,7 +319,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                         formattedAnswer += "\n";
                         
                     itemsFound++;
-                    formattedAnswer += '\U1F4B0' + '\U2B05' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
+                    formattedAnswer += '\u1f4b0' + '\u2b05' + item.content.$t; // add item content, '\u27a1' is the arrow emoji
                 }
                 else if (currentHours == itemTime) // else collect items for the current hour
                 {
@@ -328,7 +328,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                     else 
                         currentAnswer += "\n"; 
                         
-                    currentAnswer += '\U1F4B0' + '\U2B05' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
+                    currentAnswer += '\u1f4b0' + '\u2b05' + item.content.$t; // get item content, '\u27a1' is the arrow emoji
                 }
                 
                 // else doing nothing
