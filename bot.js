@@ -31,8 +31,9 @@ bot.onText(/(.+)$/, function (msg, match) {
     // keywords are anything typed in
   var keywords = match[1];
   var request = require("request");
-      
-    // send request to retrieve the spreadsheet as the JSON 
+  var formattedAnswer = "";     
+
+// send request to retrieve the spreadsheet as the JSON 
 
 
 //Start of Get Sheet1
@@ -62,7 +63,7 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        var formattedAnswer = "";
+        
         
         // debug purposes: echo from id: 
         // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
@@ -136,9 +137,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
  
         // send message telegram finally
-	
-	var MyMSG = formattedAnswer;    
-        
+	    
 	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
 	
             // reply sent!
@@ -176,7 +175,6 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        formattedAnswer = "";
         
         // debug purposes: echo from id: 
         // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
@@ -286,7 +284,6 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (isNaN(targetTime))
             targetTime = -1;
         
-        formattedAnswer = "";
         
         // debug purposes: echo from id: 
         // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
