@@ -140,12 +140,10 @@ bot.onText(/(.+)$/, function (msg, match) {
  
         // send message telegram finally
 	   
-	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
-	});
+	//bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+	//});
 	var MyMessage1 = formattedAnswer; 
-	var MyMessage1 = formattedAnswer; 
-	bot.sendMessage(msg.chat.id, MyMessage1).then(function () {
-	});
+
        
     
     });
@@ -257,9 +255,11 @@ bot.onText(/(.+)$/, function (msg, match) {
         // send message telegram finally
 	formattedAnswer += "\n" + ".";
 	
-	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
-        });
-    
+	//bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+        //});
+    	var MyMessage2 = formattedAnswer; 
+
+	    
     });
 
 //End of Get Sheet2
@@ -368,11 +368,15 @@ bot.onText(/(.+)$/, function (msg, match) {
         // send message telegram finally
         
 	
-	bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
-	
-            // reply sent!
-        });
-    
+	//bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {
+        //});
+	var MyMessage3 = formattedAnswer; 
+	bot.sendMessage(msg.chat.id, MyMessage1).then(function () {
+        });    	
+	bot.sendMessage(msg.chat.id, MyMessage2).then(function () {
+        }); 
+	bot.sendMessage(msg.chat.id, MyMessage3).then(function () {
+        }); 
     });
 
 //End of Get Sheet3
