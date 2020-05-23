@@ -94,7 +94,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                 {
                     // add the line break if not the first answer
                     if (itemsFound==0) 
-                        formattedAnswer += "گزارش قطعه " + targetTime + " - ";
+                        formattedAnswer += "گزارش انبار " + targetTime + " - ";
                     else 
                         formattedAnswer += "\n";
                         
@@ -123,10 +123,10 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (itemsFound == 0)
         {
             if (targetTime<0 || targetTime>24)
-               // formattedAnswer = "اطلاعاتی برای کد قطعه وارد شده پیدا نشد" + ".\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n";
+               // formattedAnswer = "اطلاعاتی پیدا نشد" + ".\n"+ "لطفاً کد رابصورت صحیح وارد نمایید" + ".\n";
 		    formattedAnswer = "";
             else 
-                // formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
+                // formattedAnswer = " اطلاعاتی پیدا نشد( " + targetTime+ " ч)";
 		    formattedAnswer = "";
                 
             // output current answer
@@ -213,7 +213,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                 {
                     // add the line break if not the first answer
                     if (itemsFound==0) 
-                        formattedAnswer += "قبوض آب:" + "\n";
+                        formattedAnswer += "" + "\n";
                     else 
                         formattedAnswer += "\n";
                         
@@ -242,10 +242,10 @@ bot.onText(/(.+)$/, function (msg, match) {
         if (itemsFound == 0)
         {
             if (targetTime<0 || targetTime>24)
-                //formattedAnswer = "اطلاعاتی برای کد قطعه وارد شده پیدا نشد" + ".\n"+ "لطفاً کد قطعه رابصورت صحیح وارد نمایید" + ".\n";
+                //formattedAnswer = "اطلاعاتی برای کد وارد شده پیدا نشد" + ".\n"+ "لطفاً کد رابصورت صحیح وارد نمایید" + ".\n";
            formattedAnswer = "";
 		    else 
-                //formattedAnswer = "قبضی برای قطعه وارد شده پیدا نشد ( " + targetTime+ " ч)";
+                //formattedAnswer = "پیدا نشد ( " + targetTime+ " ч)";
                 formattedAnswer = "";
             // output current answer
             if (currentAnswer != '')
