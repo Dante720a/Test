@@ -104,7 +104,9 @@ bot.onText(/(.+)$/, function (msg, match) {
        
         // send message telegram finally
 	
-	var MMSG1 = formattedAnswer;   
+	//var MMSG1 = formattedAnswer;
+	var MMSG1 =  currentAnswer ;
+	    
 	setTimeout(() => { 
 		bot.sendMessage(msg.chat.id, MMSG1).then(function () {
         	});
