@@ -113,8 +113,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var MMSG1F = MMSG1.substring(6, 15);
 	
 	setTimeout(() => { 
-		bot.sendMessage(msg.chat.id, itemTitle).then(function () {});
-		bot.sendMessage(msg.chat.id, itemTime).then(function () {});
+
 		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
 		bot.sendMessage(msg.chat.id, MMSG1F).then(function () {});
 	}, 500);
