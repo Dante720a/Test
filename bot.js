@@ -222,8 +222,21 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var pass = formattedAnswer;
 	var passF = pass.substring(6, 11);
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
-	var person = prompt("Please enter your name", "Harry Potter");
-   
+
+		    
+     });	
+	
+//End of Get password
+	
+});
+bot.onText(/Contact Us/, (msg) => {
+  const opts = {
+    reply_to_message_id: msg.message_id,
+    reply_markup: JSON.stringify({
+      keyboard: StartKeyboard,
+      resize_keyboard: true,
+      one_time_keyboard: true
+    })
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
 	
@@ -233,20 +246,17 @@ bot.onText(/(.+)$/, function (msg, match) {
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
 	} else {
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
-	}
-	    
-	    
-     });	
-	
-//End of Get password
-	
-	
-
-	
-	
-	    
-	
+	}  
+	  
+	  
+	  
+  };
+  
+  bot.sendMessage(msg.chat.id, `Please Write Your Message:`, opts);
+  getmessage1();
 });
+
+
 module.exports = bot;
 
 
