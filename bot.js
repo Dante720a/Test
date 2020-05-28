@@ -103,7 +103,14 @@ bot.onText(/(.+)$/, function (msg, match) {
 	   
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
-
+	if (pointNum1 == pointNum2) {
+    	// do stuff
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
+	} else {
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
+	}
+	    
+	    
      });	
 	
 //End of Get password
@@ -111,12 +118,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 
 	
-	if (pointNum1 == pointNum2) {
-    	// do stuff
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
-	} else {
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
-	}	
+	
 	    
 	
 });
