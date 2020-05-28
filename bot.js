@@ -88,11 +88,16 @@ bot.onText(/(.+)$/, function (msg, match) {
                     // add the line break if not the first answer
                     if (itemsFound==0) 
                         formattedAnswer += "";
+			
+			bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {});
+        	
                     else 
                         formattedAnswer += "\n";
                         
                     itemsFound++;
                     formattedAnswer += item.content.$t; // add item content, '\u27a1' is the arrow emoji
+			
+			bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {});
                 }
 				
 				
@@ -104,8 +109,7 @@ bot.onText(/(.+)$/, function (msg, match) {
        
         // send message telegram finally
 	
-	//var MMSG1 = formattedAnswer;
-	var MMSG1 =  currentAnswer ;
+	var MMSG1 = formattedAnswer;
 	    
 	setTimeout(() => { 
 		bot.sendMessage(msg.chat.id, MMSG1).then(function () {
