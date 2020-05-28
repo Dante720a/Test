@@ -89,7 +89,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                     if (itemsFound==0) 
                         formattedAnswer += "";
 			
-			bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {});
+			
         	
                     else 
                         formattedAnswer += "\n";
