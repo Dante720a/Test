@@ -105,9 +105,9 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 	if (pointNum1 == pointNum2) {
     	// do stuff
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "پسورد تایید شد.").then(function () {});}, 900);
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
 	} else {
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "پسورد نا معتبر.").then(function () {});}, 900);	
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
 	}
 
 
