@@ -110,7 +110,6 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 	setTimeout(() => { 
 
-		bot.sendMessage(msg.chat.id, pass).then(function () {});
 		bot.sendMessage(msg.chat.id, passF).then(function () {});
 
 	}, 500);
@@ -202,9 +201,8 @@ bot.onText(/(.+)$/, function (msg, match) {
 	setTimeout(() => { 
 
 		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
-		bot.sendMessage(msg.chat.id, MMSG1F).then(function () {});
-		bot.sendMessage(msg.chat.id, MMSG2).then(function () {});
-	}, 500);
+
+	}, 1000);
 
 
        
