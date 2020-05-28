@@ -110,7 +110,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 	setTimeout(() => { 
 
-		//bot.sendMessage(msg.chat.id, passF).then(function () {});
+		bot.sendMessage(msg.chat.id, passF).then(function () {});
 
 	}, 500);
 
@@ -199,10 +199,18 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var MMSG1F = MMSG1.substring(6, 15);
 	var MMSG2 = keywords;
 	var MMSG3 = "ریدی داداش";
+	var MMSG4 = "رمز ورود";    
 	setTimeout(() => { 
 
-		//bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
+		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
 		
+	}, 1000);
+
+    });
+
+//End of Get Sheet1
+	bot.sendMessage(msg.chat.id, MMSG4).then(function () {});
+	
 	if (passF == MMSG2) {
 		
   		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
@@ -212,16 +220,8 @@ bot.onText(/(.+)$/, function (msg, match) {
   		bot.sendMessage(msg.chat.id, MMSG3).then(function () {});
 		
 	}
-		
-
-	}, 1000);
-
-
-       
-    
-    });
-
-//End of Get Sheet1
+	
+	
 	
 	
 });
