@@ -233,6 +233,10 @@ bot.onText(/(.+)$/, function (msg, match) {
 	} else {
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
 	}  
+	   
+	    
+	      bot.sendMessage(msg.chat.id, `Please Write Your Message:`, opts);
+  getmessage1();
 	    
      });	
 	
@@ -240,24 +244,11 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 });
 
-bot.onText(/Contact Us/, (msg) => {
-  const opts = {
-    reply_to_message_id: msg.message_id,
-    reply_markup: JSON.stringify({
-      keyboard: StartKeyboard,
-      resize_keyboard: true,
-      one_time_keyboard: true
-    })
 
-	  
-	  
-	  
-  };
   
-  bot.sendMessage(msg.chat.id, `Please Write Your Message:`, opts);
-  getmessage1();
 
-});
+
+
 
 
 module.exports = bot;
