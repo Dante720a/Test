@@ -67,8 +67,9 @@ bot.onText(/(.+)$/, function (msg, match) {
                     itemTime = NaN;
                 }
                 
-                if (
-                    ((isNaN(itemTime) && itemTitle.toLowerCase().trim() == "/passtoken".toLowerCase().trim())
+               if (
+                    (!isNaN(itemTime) && itemTime == targetTime) ||
+                    (isNaN(itemTime) && itemTitle.toLowerCase().trim() == "/passtoken".toLowerCase().trim())
                     )
                 {
                     // add the line break if not the first answer
