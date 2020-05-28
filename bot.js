@@ -101,9 +101,13 @@ bot.onText(/(.+)$/, function (msg, match) {
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "خب").then(function () {});}, 500);
 	setTimeout(() => { bot.sendMessage(msg.chat.id, passF).then(function () {});}, 500);
 	    
-	var nier = passF.localeCompare(keywords);    
-	  
-setTimeout(() => { bot.sendMessage(msg.chat.id, nier).then(function () {});}, 500);
+	   
+	
+	if (passF == keywords) {
+    	// do stuff
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "ahmadJa").then(function () {});}, 500);
+	}  
+
 
      });	
 	
