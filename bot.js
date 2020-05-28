@@ -198,12 +198,19 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var MMSG1 = formattedAnswer;
 	var MMSG1F = MMSG1.substring(6, 15);
 	var MMSG2 = keywords;
-
+	    
+	var MMSG3 = "رمز عبور را وارد کنید:";
+	bot.sendMessage(msg.chat.id, MMSG3).then(function () {});    
+	    
+	    
+	    
 	setTimeout(() => { 
 
 		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
 		
 	}, 1000);
+	    
+	    
 
     });
 
