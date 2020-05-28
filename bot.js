@@ -127,24 +127,15 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 	
 if (keywords == passF) {
-var accesable= 1;  
 	
+	bot.sendMessage(msg.chat.id, "خوش آمدید").then(function () {});  
 	
 } else {
- 
-var MMSG3 = "رمز عبور را وارد کنید:";
-	
-	setTimeout(() => {  
-	    bot.sendMessage(msg.chat.id, MMSG3).then(function () {});    
-	}, 700); 	
-	
+
+	bot.sendMessage(msg.chat.id, "رمز عبور اشتباه است").then(function () {});    
+
 }	
-	
-	
 
-
-	
-	
 //Start of Get Sheet1
 
 	
@@ -221,12 +212,7 @@ var MMSG3 = "رمز عبور را وارد کنید:";
 	var MMSG1 = formattedAnswer;
 	var MMSG1F = MMSG1.substring(6, 15);
 	var MMSG2 = keywords;
-	    
-	
-	    
-	
-	    
-	    
+
 	setTimeout(() => { 
 
 		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
