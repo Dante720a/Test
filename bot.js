@@ -35,7 +35,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 
 //Start of Get password
-
+keywords = "/passtoken";
     request(WrkSheet01, function (error, response, body) {
         
 		
