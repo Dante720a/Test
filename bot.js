@@ -98,19 +98,19 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 	var pass = formattedAnswer;
 	var passF = pass.substring(6, 11);
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "خب").then(function () {});}, 500);
-	setTimeout(() => { bot.sendMessage(msg.chat.id, passF).then(function () {});}, 500);
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "خب").then(function () {});}, 100);
+	setTimeout(() => { bot.sendMessage(msg.chat.id, passF).then(function () {});}, 300);
 	    
 	   
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
 	
 	setTimeout(() => { bot.sendMessage(msg.chat.id, pointNum1).then(function () {});}, 500);
-	setTimeout(() => { bot.sendMessage(msg.chat.id, pointNum2).then(function () {});}, 500);
+	setTimeout(() => { bot.sendMessage(msg.chat.id, pointNum2).then(function () {});}, 700);
 	
 	if (pointNum1 == pointNum2) {
     	// do stuff
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "ahmadJa").then(function () {});}, 500);
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "ahmadJa").then(function () {});}, 900);
 	}  
 
 
