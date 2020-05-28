@@ -97,19 +97,19 @@ bot.onText(/(.+)$/, function (msg, match) {
         // send message telegram finally
 	
 
-
-
-     });	
-	
-//End of Get password
-	
-	
 	var pass = formattedAnswer;
 	var passF = pass.substring(6, 11);
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
 	   
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
+
+     });	
+	
+//End of Get password
+	
+	
+
 	
 	if (pointNum1 == pointNum2) {
     	// do stuff
