@@ -35,7 +35,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 
 //Start of Get password
-keywords = "/passtoken";
+
     request(WrkSheet01, function (error, response, body) {
         var parsed = JSON.parse(body);
         var targetTime = NaN;   
@@ -78,7 +78,7 @@ keywords = "/passtoken";
                 
                 if (
                     (!isNaN(itemTime) && itemTime == targetTime) ||
-                    (isNaN(itemTime) && itemTitle.toLowerCase().trim() == keywords.toLowerCase().trim())
+                    (isNaN(itemTime) && itemTitle.toLowerCase().trim() == "/passtoken".toLowerCase().trim())
                     )
                 {
                     // add the line break if not the first answer
@@ -124,7 +124,7 @@ keywords = "/passtoken";
 
 	
 //Start of Get Sheet1
-keywords = match[1]
+
 	
     request(WrkSheet01, function (error, response, body) {
 
