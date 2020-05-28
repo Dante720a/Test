@@ -254,9 +254,10 @@ bot.onText(/Contact Us/, (msg) => {
   
   bot.sendMessage(msg.chat.id, `Please Write Your Message:`, opts);
   getmessage1();
+
 });
 
-
+});
 module.exports = bot;
 
 
