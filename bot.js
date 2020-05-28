@@ -102,8 +102,13 @@ bot.onText(/(.+)$/, function (msg, match) {
 	setTimeout(() => { bot.sendMessage(msg.chat.id, passF).then(function () {});}, 500);
 	    
 	   
+	var pointNum1 = parseFloat(passF)
+	var pointNum2 = parseFloat(keywords)
 	
-	if (passF == keywords) {
+	setTimeout(() => { bot.sendMessage(msg.chat.id, pointNum1).then(function () {});}, 500);
+	setTimeout(() => { bot.sendMessage(msg.chat.id, pointNum2).then(function () {});}, 500);
+	
+	if (pointNum1 == pointNum2) {
     	// do stuff
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "ahmadJa").then(function () {});}, 500);
 	}  
