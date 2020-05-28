@@ -97,9 +97,9 @@ bot.onText(/(.+)$/, function (msg, match) {
         // send message telegram finally
 	
 	var pass = formattedAnswer;
-	var passF = pass.substring(6, 15);
+	var passF = pass.substring(6, 4);
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "خب").then(function () {});}, 500);
-	
+	setTimeout(() => { bot.sendMessage(msg.chat.id, passF).then(function () {});}, 500);
 	    
 	var nier = passF.localeCompare(keywords);    
 	  
