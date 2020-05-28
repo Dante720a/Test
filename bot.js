@@ -98,12 +98,13 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 	var pass = formattedAnswer;
 	var passF = pass.substring(6, 15);
-
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "خب").then(function () {});}, 500);
+	
 	if (passF == keywords){
 
 	setTimeout(() => { bot.sendMessage(msg.chat.id, passF).then(function () {});}, 500);
 	setTimeout(() => { bot.sendMessage(msg.chat.id, keywords).then(function () {});}, 500);
-	};
+	}
 
 
      });	
