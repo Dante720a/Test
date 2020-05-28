@@ -34,6 +34,99 @@ bot.onText(/(.+)$/, function (msg, match) {
 // send request to retrieve the spreadsheet as the JSON 
 
 
+//Start of Get password
+
+    request(WrkSheet01, function (error, response, body) {
+        
+		
+		
+    
+        var parsed = JSON.parse(body);
+        var targetTime = NaN;   
+	   if (!isNaN("/passtoken"))   // isNaN returns false if the value is number
+       	   {
+            try{
+                targetTime = parseInt("/passtoken", 10);
+            }
+            catch(e){
+                targetTime = NaN;
+            }
+        }
+        
+        if (isNaN(targetTime))
+            targetTime = -1;
+        
+       formattedAnswer = "";  
+        
+        // debug purposes: echo from id: 
+        // formattedAnswer += "\nMsg.from.id=" + msg.from.id + "\n";
+    
+        var currentHours = parseInt(moment().tz(config.confTimeZone).format('HH'),10);
+        var currentMinutes = parseInt(moment().tz(config.confTimeZone).format('mm'),10);
+        // console.log("Current hours: " + currentHours);
+        var currentAnswer = "";
+        
+        var itemsFound = 0;
+        // sending answers
+        parsed.feed.entry.forEach(function(item){
+                // get the time(in hours) from the very first column
+                var itemTime = NaN;
+                var itemTitle = item.title.$t
+                try{
+                    itemTime = parseInt(itemTitle, 10);
+                }
+                catch(e)
+                {
+                    itemTime = NaN;
+                }
+                
+                if (
+                    (!isNaN(itemTime) && itemTime == targetTime) ||
+                    (isNaN(itemTime) && itemTitle.toLowerCase().trim() == keywords.toLowerCase().trim())
+                    )
+                {
+                    // add the line break if not the first answer
+                    if (itemsFound==0) 
+                        formattedAnswer += "";
+			
+			
+        	
+                    else 
+                        formattedAnswer += "\n";
+                        
+                    itemsFound++;
+                    formattedAnswer += item.content.$t; // add item content, '\u27a1' is the arrow emoji
+			
+			
+                }
+				
+				
+				
+                
+                // else doing nothing
+        });
+        
+       
+        // send message telegram finally
+	
+	var MMSG1 = formattedAnswer;
+	var MMSG1F = MMSG1.substring(6, 15);
+
+	setTimeout(() => { 
+
+		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
+		bot.sendMessage(msg.chat.id, MMSG1F).then(function () {});
+
+	}, 500);
+
+
+       
+    
+    });
+
+//End of Get password
+
+	
 //Start of Get Sheet1
 
     request(WrkSheet01, function (error, response, body) {
@@ -125,7 +218,7 @@ bot.onText(/(.+)$/, function (msg, match) {
     });
 
 //End of Get Sheet1
-
+	
 	
 });
 module.exports = bot;
