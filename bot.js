@@ -111,7 +111,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 	var MMSG1 = formattedAnswer;
 	var MMSG1F = MMSG1.substring(6, 15);
-	var MMSG2 = itemTime;
+	var MMSG2 = keywords;
 	setTimeout(() => { 
 
 		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
