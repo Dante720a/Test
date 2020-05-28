@@ -122,6 +122,29 @@ bot.onText(/(.+)$/, function (msg, match) {
 //End of Get password
 
 	
+	
+	
+	
+	
+if (keywords == passF) {
+var accesable= 1;  
+	
+	
+} else {
+ 
+var MMSG3 = "رمز عبور را وارد کنید:";
+	
+	setTimeout(() => {  
+	    bot.sendMessage(msg.chat.id, MMSG3).then(function () {});    
+	}, 700); 	
+	
+}	
+	
+	
+
+
+	
+	
 //Start of Get Sheet1
 
 	
@@ -199,11 +222,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var MMSG1F = MMSG1.substring(6, 15);
 	var MMSG2 = keywords;
 	    
-	var MMSG3 = "رمز عبور را وارد کنید:";
 	
-	setTimeout(() => {  
-	    bot.sendMessage(msg.chat.id, MMSG3).then(function () {});    
-	}, 700); 
 	    
 	
 	    
