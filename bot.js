@@ -39,16 +39,7 @@ bot.onText(/(.+)$/, function (msg, match) {
     request(WrkSheet01, function (error, response, body) {
         var parsed = JSON.parse(body);
         var targetTime = NaN;   
-	   if (!isNaN("/passtoken"))   // isNaN returns false if the value is number
-       	   {
-            try{
-                targetTime = parseInt("/passtoken", 10);
-            }
-            catch(e){
-                targetTime = NaN;
-            }
-        }
-        
+	          
         if (isNaN(targetTime))
             targetTime = -1;
         
