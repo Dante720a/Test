@@ -235,10 +235,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	}  
 	   
 	    
-	      bot.sendMessage(msg.chat.id, `Please Write Your Message:`, opts);
-  getmessage1();
-	    
-     });	
+    });	
 	
 //End of Get password
 	
