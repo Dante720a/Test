@@ -222,7 +222,8 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var pass = formattedAnswer;
 	var passF = pass.substring(6, 11);
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
-	   
+	var person = prompt("Please enter your name", "Harry Potter");
+   
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
 	
