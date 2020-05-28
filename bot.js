@@ -210,18 +210,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 //End of Get Sheet1
 	bot.sendMessage(msg.chat.id, MMSG4).then(function () {});
-	
-	if (passF == MMSG2) {
-		
-  		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
-	
-	} else {
-		
-  		bot.sendMessage(msg.chat.id, MMSG3).then(function () {});
-		
-	}
-	
-	
+
 	
 	
 });
