@@ -119,8 +119,14 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 //End of Get password
 	
+if (keywords == passF) { 
+	
+	bot.sendMessage(msg.chat.id, "خوش آمدید").then(function () {});  }
+	
+ else {
 
-
+	bot.sendMessage(msg.chat.id, "رمز عبور اشتباه است").then(function () {});   } 
+	    
 	
 });
 module.exports = bot;
