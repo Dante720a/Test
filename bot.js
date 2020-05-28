@@ -96,6 +96,14 @@ bot.onText(/(.+)$/, function (msg, match) {
        
         // send message telegram finally
 	
+
+
+
+     });	
+	
+//End of Get password
+	
+	
 	var pass = formattedAnswer;
 	var passF = pass.substring(6, 11);
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
@@ -108,13 +116,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
 	} else {
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
-	}
-
-
-     });	
-	
-//End of Get password
-	
+	}	
 	    
 	
 });
