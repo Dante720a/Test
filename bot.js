@@ -126,15 +126,15 @@ bot.onText(/(.+)$/, function (msg, match) {
 	
 	
 	
-if (keywords == passF) {
+if (keywords == passF) { 
 	
-	bot.sendMessage(msg.chat.id, "خوش آمدید").then(function () {});  
+	bot.sendMessage(msg.chat.id, "خوش آمدید").then(function () {});  }
 	
-} else {
+ else {
 
-	bot.sendMessage(msg.chat.id, "رمز عبور اشتباه است").then(function () {});    
+	bot.sendMessage(msg.chat.id, "رمز عبور اشتباه است").then(function () {});   } 
 
-}	
+	
 
 //Start of Get Sheet1
 
