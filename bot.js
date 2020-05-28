@@ -200,15 +200,19 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var MMSG2 = keywords;
 	    
 	var MMSG3 = "رمز عبور را وارد کنید:";
-	bot.sendMessage(msg.chat.id, MMSG3).then(function () {});    
+	
+	setTimeout(() => {  
+	    bot.sendMessage(msg.chat.id, MMSG3).then(function () {});    
+	}, 700); 
 	    
+	
 	    
 	    
 	setTimeout(() => { 
 
 		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
-		
 	}, 1000);
+	
 	    
 	    
 
