@@ -97,7 +97,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                     itemsFound++;
                     formattedAnswer += item.content.$t; // add item content, '\u27a1' is the arrow emoji
 			
-			bot.sendMessage(msg.chat.id, formattedAnswer).then(function () {});
+			
                 }
 				
 				
