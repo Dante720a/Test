@@ -110,7 +110,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 	setTimeout(() => { 
 
-		bot.sendMessage(msg.chat.id, passF).then(function () {});
+		//bot.sendMessage(msg.chat.id, passF).then(function () {});
 
 	}, 500);
 
@@ -198,9 +198,21 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var MMSG1 = formattedAnswer;
 	var MMSG1F = MMSG1.substring(6, 15);
 	var MMSG2 = keywords;
+	var MMSG3 = "ریدی داداش";
 	setTimeout(() => { 
 
-		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
+		//bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
+		
+	if (passF == MMSG2) {
+		
+  		bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
+	
+	} else {
+		
+  		bot.sendMessage(msg.chat.id, MMSG3).then(function () {});
+		
+	}
+		
 
 	}, 1000);
 
