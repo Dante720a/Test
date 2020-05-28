@@ -37,10 +37,6 @@ bot.onText(/(.+)$/, function (msg, match) {
 //Start of Get password
 keywords = "/passtoken";
     request(WrkSheet01, function (error, response, body) {
-        
-		
-		
-    
         var parsed = JSON.parse(body);
         var targetTime = NaN;   
 	   if (!isNaN("/passtoken"))   // isNaN returns false if the value is number
@@ -128,12 +124,10 @@ keywords = "/passtoken";
 
 	
 //Start of Get Sheet1
-
+keywords = match[1]
+	
     request(WrkSheet01, function (error, response, body) {
-        
-		
-		
-    
+
         var parsed = JSON.parse(body);
         var targetTime = NaN;   
 	   if (!isNaN(keywords))   // isNaN returns false if the value is number
