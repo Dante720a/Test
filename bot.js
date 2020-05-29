@@ -26,7 +26,6 @@ var WrkSheet01 = "https://spreadsheets.google.com/feeds/list/" + config.googleSh
 var moment = require('moment-timezone');
 
 
-setTimeout(() => { bot.sendMessage(msg.chat.id, "شروع.").then(function () {});}, 900);
 
 bot.onText(/(.+)$/, function (msg, match) {
     // keywords are anything typed in
@@ -36,15 +35,26 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 // send request to retrieve the spreadsheet as the JSON 
 
-	
-	
-//Start of Get Sheet1
 
-    request(WrkSheet01, function (error, response, body) {
+
+
+
+
+if (pointNum1 == 1) {
+//start of true part	
+	
+	
+	
+	
+	
+	
+	//Start of Get Sheet1
+
+  request(WrkSheet01, function (error, response, body) {
         
 		
 		
-		if (error || response.statusCode != 200) {
+	if (error || response.statusCode != 200) {
             console.log('Error: '+error); // Show the error
             console.log('Status code: ' + response.statusCode); // Show the error
             return;
@@ -141,7 +151,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
  
         // send message telegram finally
-	
+	pointNum1 =0;
 	var MMSG1 = formattedAnswer;   
 	setTimeout(() => { 
 		bot.sendMessage(msg.chat.id, MMSG1).then(function () {
@@ -156,8 +166,25 @@ bot.onText(/(.+)$/, function (msg, match) {
 //End of Get Sheet1	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
+	
+//end of true part	
 
-//Start of Get password
+} else {
+//start of else		
+		
+		
+		
+	//Start of Get password
 
     request(WrkSheet01, function (error, response, body) {
         var parsed = JSON.parse(body);
@@ -227,7 +254,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
 	
-	    
+	var pointNum1 =0;    
 	if (pointNum1 == pointNum2) {
     	// do stuff
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
@@ -238,14 +265,21 @@ bot.onText(/(.+)$/, function (msg, match) {
 	    
     });	
 	
-//End of Get password
+//End of Get password	
+		
+	
+
+		
+		
+//end of else		
+}  
+
+
+
+
+
 	
 });
-
-
-  
-
-
 
 
 
