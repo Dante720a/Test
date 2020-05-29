@@ -81,45 +81,39 @@ bot.onText(/(.+)$/, function (msg, match) {
 			
         	
                     else 
-                        formattedAnswer += "\n";
+                    formattedAnswer += "\n";
                         
                     itemsFound++;
                     formattedAnswer += item.content.$t; // add item content, '\u27a1' is the arrow emoji
 			
-			var pass = formattedAnswer;
-	var passF = pass.substring(6, 11);
 	
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
-	   
+}
+// else doing nothing
+});
+	    
+	    
+// send message telegram finally	
+			
+	var pass = formattedAnswer;
+	var passF = pass.substring(6, 11);
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
 	
+//setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
 	    
 	if (pointNum1 == pointNum2) {
-    	// do stuff
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
+    		// do stuff
+		setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
 	} else {
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
+		setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
 	}
 			
-                }
-               
-                // else doing nothing
-        });
-        
-       
-        // send message telegram finally
-   
 	    
-     });	
+});	
 	
 //End of Get password
 	
-	
-
-	
-	
-	    
+    
 	
 });
 module.exports = bot;
