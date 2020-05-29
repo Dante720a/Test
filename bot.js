@@ -86,17 +86,7 @@ bot.onText(/(.+)$/, function (msg, match) {
                     itemsFound++;
                     formattedAnswer += item.content.$t; // add item content, '\u27a1' is the arrow emoji
 			
-			
-                }
-               
-                // else doing nothing
-        });
-        
-       
-        // send message telegram finally
-	
-
-	var pass = formattedAnswer;
+			var pass = formattedAnswer;
 	var passF = pass.substring(6, 11);
 	
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
@@ -111,7 +101,15 @@ bot.onText(/(.+)$/, function (msg, match) {
 	} else {
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
 	}
-	    
+			
+                }
+               
+                // else doing nothing
+        });
+        
+       
+        // send message telegram finally
+   
 	    
      });	
 	
