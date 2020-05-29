@@ -99,7 +99,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
 	
-//setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
+		setTimeout(() => { bot.sendMessage(msg.chat.id, passF).then(function () {});}, 100);
 	    
 	if (pointNum1 == pointNum2) {
     		// do stuff
