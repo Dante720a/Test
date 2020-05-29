@@ -35,29 +35,8 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 // send request to retrieve the spreadsheet as the JSON 
 
-
-
-
-
-
-if (formattedAnswer == "") {
-//start of true part	
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "خالیه.").then(function () {});}, 900);
 	
-//end of true part	
-
-} else {
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "پره.").then(function () {});}, 900);
-	
-//start of else		
-//end of else		
-}  	
-	
-	
-	
-	
-	
-	//Start of Get Sheet1
+//Start of Get Sheet1
 
   request(WrkSheet01, function (error, response, body) {
         
