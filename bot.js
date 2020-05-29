@@ -36,13 +36,14 @@ bot.onText(/(.+)$/, function (msg, match) {
 // send request to retrieve the spreadsheet as the JSON 
 
 	
+	
 //Start of Get Sheet1
 
-  request(WrkSheet01, function (error, response, body) {
+    request(WrkSheet01, function (error, response, body) {
         
 		
 		
-	if (error || response.statusCode != 200) {
+		if (error || response.statusCode != 200) {
             console.log('Error: '+error); // Show the error
             console.log('Status code: ' + response.statusCode); // Show the error
             return;
@@ -139,11 +140,11 @@ bot.onText(/(.+)$/, function (msg, match) {
 
  
         // send message telegram finally
-	pointNum1 =0;
+	
 	var MMSG1 = formattedAnswer;   
-	  
-		setTimeout(() => {bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
-		setTimeout(() => {bot.sendMessage(msg.chat.id, "یک یود").then(function () {});	  
+	setTimeout(() => { 
+		bot.sendMessage(msg.chat.id, MMSG1).then(function () {
+        	});
 	}, 500);
 
 
@@ -153,10 +154,9 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 //End of Get Sheet1	
 	
-		
-		
-		
-	//Start of Get password
+	
+
+//Start of Get password
 
     request(WrkSheet01, function (error, response, body) {
         var parsed = JSON.parse(body);
@@ -221,34 +221,32 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 	var pass = formattedAnswer;
 	var passF = pass.substring(6, 11);
-		setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
-		setTimeout(() => { bot.sendMessage(msg.chat.id, "صفر بود").then(function () {});}, 100);
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
+	var person = prompt("Please enter your name", "Harry Potter");
+   
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
 	
-	var pointNum1 =0;    
+	    
 	if (pointNum1 == pointNum2) {
     	// do stuff
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
 	} else {
 	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور نا معتبر.").then(function () {});}, 900);	
-	}  
-	   
+	}
 	    
-    });	
+	    
+     });	
 	
-//End of Get password	
-		
+//End of Get password
+	
 	
 
-		
-		
-
+	
+	
+	    
 	
 });
-
-
-
 module.exports = bot;
 
 
