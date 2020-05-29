@@ -153,9 +153,9 @@ if (pointNum1 == 1) {
         // send message telegram finally
 	pointNum1 =0;
 	var MMSG1 = formattedAnswer;   
-	setTimeout(() => { 
-		bot.sendMessage(msg.chat.id, MMSG1).then(function () {
-        	});
+	  
+		setTimeout(() => {bot.sendMessage(msg.chat.id, MMSG1).then(function () {});
+		setTimeout(() => {bot.sendMessage(msg.chat.id, "یک یود").then(function () {});	  
 	}, 500);
 
 
@@ -165,17 +165,7 @@ if (pointNum1 == 1) {
 
 //End of Get Sheet1	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
+		setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
 	
 //end of true part	
 
@@ -249,8 +239,8 @@ if (pointNum1 == 1) {
 
 	var pass = formattedAnswer;
 	var passF = pass.substring(6, 11);
-	setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
-
+		setTimeout(() => { bot.sendMessage(msg.chat.id, "لطفاً رمز عبور را وارد کنید:").then(function () {});}, 100);
+		setTimeout(() => { bot.sendMessage(msg.chat.id, "صفر بود").then(function () {});}, 100);
 	var pointNum1 = parseFloat(passF)
 	var pointNum2 = parseFloat(keywords)
 	
