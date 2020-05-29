@@ -42,7 +42,16 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 if (formattedAnswer == "") {
 //start of true part	
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "خالیه.").then(function () {});}, 900);
 	
+//end of true part	
+
+} else {
+	setTimeout(() => { bot.sendMessage(msg.chat.id, "پره.").then(function () {});}, 900);
+	
+//start of else		
+//end of else		
+}  	
 	
 	
 	
@@ -165,12 +174,6 @@ if (formattedAnswer == "") {
 
 //End of Get Sheet1	
 	
-		setTimeout(() => { bot.sendMessage(msg.chat.id, "رمز عبور تایید شد.").then(function () {});}, 900);
-	
-//end of true part	
-
-} else {
-//start of else		
 		
 		
 		
@@ -261,12 +264,6 @@ if (formattedAnswer == "") {
 
 		
 		
-//end of else		
-}  
-
-
-
-
 
 	
 });
