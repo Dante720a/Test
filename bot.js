@@ -26,6 +26,7 @@ var WrkSheet01 = "https://spreadsheets.google.com/feeds/list/" + config.googleSh
 var moment = require('moment-timezone');
 
 
+setTimeout(() => { bot.sendMessage(msg.chat.id, "شروع.").then(function () {});}, 900);
 
 bot.onText(/(.+)$/, function (msg, match) {
     // keywords are anything typed in
