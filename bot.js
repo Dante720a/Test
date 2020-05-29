@@ -40,7 +40,7 @@ bot.onText(/(.+)$/, function (msg, match) {
 
 
 
-if (pointNum1 == 1) {
+if (formattedAnswer == "") {
 //start of true part	
 	
 	
